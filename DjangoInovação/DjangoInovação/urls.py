@@ -16,9 +16,12 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('about/', views.about, name='about'),
     path('DjangoProjeto/', views.ListaEventos),
+    path('DjangoProjeto/evento/', views.evento),
+    path('DjangoProjeto/evento/submit', views.submit_evento),
     path('loginOne/', views.login_user),
     path('loginOne/submit', views.submit_login),
     path('DjangoProjeto/deslogarOne/', views.logout_user),
+    path('DjangoProjeto/evento/deslogarOne/', views.logout_user),
     path('login/',
          LoginView.as_view
          (

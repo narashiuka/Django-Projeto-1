@@ -72,6 +72,9 @@ def submit_login(request):
             messages.error(request, "Usuário ou Senha inválidos")
     return redirect('/')
 
+@login_required(login_url='/loginOne/')
+def evento(request):
+    return render(request, 'evento.html')
 
 @login_required(login_url='/loginOne/')
 def ListaEventos(request):
@@ -79,4 +82,17 @@ def ListaEventos(request):
     event = Evento.objects.filter(Usuario=utilizador)
     dados = {'eventos': event}
     return render(request, 'DjangoProjeto.html', dados)
+
+@login_required(login_url='/loginOne/')
+def submit_evento(request):
+    if request.POST:
+        titulo = request.POST.get('titulo')
+        descricao = request.POST.get('descricao')
+        data_evento = request.POST.get('data_evento')
+        usuario = request.user
+        Evento.objects.create(titulo=titulo,
+                              data_evento=data_evento,
+                              descricao=descricao,
+                              Usuario=usuario)
+    return redirect('/')
 

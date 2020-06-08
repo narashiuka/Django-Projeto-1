@@ -5,6 +5,8 @@
 {% block content %}
         <h2>Agendamento</h2>
 
+            <button  onclick="window.location.href = 'evento/'">Novo Evento</button>
+
         <ul>
             {% for evento in eventos %}
             <li style="font-size: 18px"><b>{{ evento.titulo }}:</b></li>
