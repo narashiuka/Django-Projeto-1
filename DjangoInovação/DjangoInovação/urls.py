@@ -16,6 +16,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('about/', views.about, name='about'),
     path('DjangoProjeto/', views.ListaEventos),
+    path('DjangoProjeto/lista/<int:id_usuario>/', views.json_lista_evento),
     path('DjangoProjeto/evento/', views.evento),
     path('DjangoProjeto/evento/submit', views.submit_evento),
     path('DjangoProjeto/delete/<int:id_evento>/', views.delete_evento),
