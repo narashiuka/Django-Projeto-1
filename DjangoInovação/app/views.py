@@ -89,10 +89,12 @@ def submit_evento(request):
         titulo = request.POST.get('titulo')
         descricao = request.POST.get('descricao')
         data_evento = request.POST.get('data_evento')
+        local = request.POST.get('local')
         usuario = request.user
         Evento.objects.create(titulo=titulo,
                               data_evento=data_evento,
                               descricao=descricao,
-                              Usuario=usuario)
+                              Usuario=usuario,
+                              local=local)
     return redirect('/')
 

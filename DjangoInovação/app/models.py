@@ -12,6 +12,7 @@ class Evento(models.Model):
     data_criacao = models.DateTimeField(auto_now=True)
     texto = models.TextField(blank=True, null=True)
     Usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    local = models.TextField(blank=True, null=True, default='')
 
     class Meta:
         db_table = 'Evento'
