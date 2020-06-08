@@ -1,0 +1,16 @@
+﻿
+{% extends "modelPage.html" %}
+
+
+{% block content %}
+        <h2>Agendamento</h2>
+
+        <ul>
+            {% for evento in eventos %}
+            <li style="font-size: 18px"><b>{{ evento.titulo }}:</b></li>
+            <p>{{ evento.descricao }}</p>
+            <p>{{ evento.pegando_data_convertida }}</p>
+            {% endfor %}
+        </ul>
+
+{% endblock %}

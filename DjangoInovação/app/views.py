@@ -3,8 +3,9 @@ Definition of views.
 """
 
 from datetime import datetime
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpRequest
+from app.models import Evento
 
 def home(request):
     """Renders the home page."""
@@ -43,3 +44,13 @@ def about(request):
             'year':datetime.now().year,
         }
     )
+
+def index(request):
+    return redirect('/DjangoProjeto/')
+
+def ListaEventos(request):
+    #utilizador = request.user
+    event = Evento.objects.all() #filter(Usuario=utilizador)
+    dados = {'eventos': event}
+    return render(request, 'DjangoProjeto.html', dados)
+

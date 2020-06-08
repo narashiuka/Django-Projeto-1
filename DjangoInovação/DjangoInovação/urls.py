@@ -7,12 +7,15 @@ from django.urls import path
 from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView
 from app import forms, views
+from django.views.generic import RedirectView
 
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', RedirectView.as_view(url='/DjangoProjeto/')),
+    path('home/', views.home, name='home'),
     path('contact/', views.contact, name='contact'),
     path('about/', views.about, name='about'),
+    path('DjangoProjeto/', views.ListaEventos),
     path('login/',
          LoginView.as_view
          (
