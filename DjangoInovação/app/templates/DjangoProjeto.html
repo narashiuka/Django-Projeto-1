@@ -9,9 +9,10 @@
 
         <ul>
             {% for evento in eventos %}
-            <li style="font-size: 18px"><b>{{ evento.titulo }}:</b></li>
+            <li style="font-size: 18px"><b>{{ evento.id }} - {{ evento.titulo }}:</b></li>
             <p>{{ evento.descricao }}</p>
             <p>{{ evento.pegando_data_convertida }}</p>
+            <p>(<a href="evento/?id={{ evento.id }}">Editar</a> / <a href="delete/{{ evento.id }}">Excluir</a>)</p>
             {% endfor %}
         </ul>
 
