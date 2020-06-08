@@ -64,6 +64,7 @@
     <Content Include="app\templates\modelHeader.html" />
     <Content Include="app\templates\modelFooter.html" />
     <Content Include="app\templates\modelPage.html" />
+    <Content Include="app\templates\loginOne.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
